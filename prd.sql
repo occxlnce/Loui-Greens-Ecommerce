@@ -1,0 +1,2 @@
+INSERT INTO products (product_title, product_description, product_keywords, category_id, brand_id, product_image1, product_image2, product_image3, product_price, date, status)
+VALUES ('Litchi', 'a delicious and exotic fruit known for its unique flavor and vibrant appearance', 'Reddish-brown, tropical, translucent', 1, 1, 'product-1.jpg', 'product-2.jpg', 'product-3.jpg', 89.99, NOW(), 'available');

@@ -1,0 +1,23 @@
+html
+<input type="submit" value="Remove Cart" class="bg-success text-light px-3 py-2 border-0 mx-3" name="remove_cart">
+
+Similar to the previous case, JavaScript is not explicitly shown here, but it is likely that clicking the "Remove Cart" button triggers a JavaScript function to remove the selected cart items without reloading the page
+
+php + js
+
+function remove_cart_item(){
+	global $con;
+	if(isset($_POST['remove_cart'])){
+		foreach($_POST['removeitem'] as $remove_id){
+			echo $remove_id;
+			$delete_query = "DELETE FROM cart_details WHERE product_id = $remove_id";
+			$run_delete = mysqli_query($con, $delete_query);
+			if($run_delete){
+				echo "<script>window.open('cart.php','_self')</script>";
+			}
+		}
+	}
+}
+
+$remove_item = remove_cart_item();
+echo $remove_item;
